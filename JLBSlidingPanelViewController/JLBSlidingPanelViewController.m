@@ -315,8 +315,8 @@ const CGFloat kJLBMinimumBackgroundScale = 0.95f;
             self.mainViewController.view.transform = CGAffineTransformMakeTranslation(adjustmentX, 0.0f);
         }
         
-        self.state = (scrollViewOffsetX / scrollViewContentSizeWidth) * (scrollViewContentSizeWidth / mainViewWidth);
-
+        self.state = (NSUInteger) floorf((scrollViewOffsetX / scrollViewContentSizeWidth) * (scrollViewContentSizeWidth / mainViewWidth));
+        
         if (scrollViewOffsetX < mainViewWidth) {
             self.visibleBackgroundViewController = self.leftViewController;
         } else if (scrollViewOffsetX > mainViewWidth) {
